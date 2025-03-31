@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist - Banshee Music App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="subscription.html" aria-label="Go to subscription page">
+                    <img src="imgs/logo-B.png" alt="Banshee Music Logo" loading="lazy">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="playlist.html" aria-current="page">Playlists</a></li>
+            </ul>
+            <div class="user-profile">
+                <button type="button" class="profile-button" aria-expanded="false" aria-controls="dropdown-menu">
+                    <img class="profile-icon" src="imgs/profile-icon-B.png" alt="User Profile" loading="lazy">
+                </button>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                        <li><a href="#" class="logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="app-container">
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="playlist-header">
+                    <div class="playlist-cover">
+                        <img src="imgs/album-01-B.png" alt="Playlist cover" id="playlist-cover">
+                        <button type="button" class="edit-cover" aria-label="Change playlist cover">
+                            <i class="fas fa-camera"></i>
+                            <span>Change cover</span>
+                        </button>
+                    </div>
+
+                    <div class="playlist-info">
+                        <span class="playlist-type">PLAYLIST</span>
+                        <h1 id="playlist-name" contenteditable="true">My Awesome Playlist</h1>
+
+                        <div class="playlist-meta">
+                            <img src="imgs/profile-icon-B.png" alt="User" class="creator-avatar">
+                            <span class="creator-name">Username</span>
+                            <span class="dot">•</span>
+                            <span class="song-count">24 songs</span>
+                            <span class="dot">•</span>
+                            <span class="duration">1 hr 42 min</span>
+                        </div>
+
+                        <div class="playlist-description" contenteditable="true">
+                            A collection of my favorite tracks for any mood. Perfect for work, relaxation, or just vibing out.
+                        </div>
+
+                        <div class="playlist-actions">
+                            <button type="button" class="play-all">
+                                <i class="fas fa-play"></i>
+                                Play
+                            </button>
+                            <button type="button" class="shuffle-play">
+                                <i class="fas fa-random"></i>
+                                Shuffle
+                            </button>
+                            <button type="button" class="share-playlist" aria-label="Share playlist">
+                                <i class="fas fa-share-alt"></i> Share
+                            </button>
+                            <button type="button" class="more-options" aria-label="More options">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playlist Analytics Section -->
+                <div class="analytics-section">
+                    <div class="section-header">
+                        <h2>Playlist Analytics</h2>
+                        <button type="button" class="refresh-analytics-btn" aria-label="Refresh analytics">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <div class="analytics-icon">
+                                <i class="fas fa-headphones-alt"></i>
+                            </div>
+                            <div class="analytics-content">
+                                <h3>Total Plays</h3>
+                                <div class="analytics-value">1,248</div>
+                                <div class="analytics-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 12% this week
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="analytics-content">
+                                <h3>Listening Time</h3>
+                                <div class="analytics-value">32h 15m</div>
+                                <div class="analytics-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 8% this week
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="analytics-content">
+                                <h3>Likes</h3>
+                                <div class="analytics-value">87</div>
+                                <div class="analytics-trend positive">
+                                    <i class="fas fa-arrow-up"></i> 5% this week
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="analytics-content">
+                                <h3>Shares</h3>
+                                <div class="analytics-value">24</div>
+                                <div class="analytics-trend negative">
+                                    <i class="fas fa-arrow-down"></i> 3% this week
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="top-songs-chart">
+                        <h3>Most Played Songs</h3>
+                        <div class="chart-container">
+                            <div class="chart-bar chart-bar-1">
+                                <span class="chart-label">Neon Dreams</span>
+                                <span class="chart-value">342 plays</span>
+                            </div>
+                            <div class="chart-bar chart-bar-2">
+                                <span class="chart-label">Electric Soul</span>
+                                <span class="chart-value">287 plays</span>
+                            </div>
+                            <div class="chart-bar chart-bar-3">
+                                <span class="chart-label">Midnight Drive</span>
+                                <span class="chart-value">231 plays</span>
+                            </div>
+                            <div class="chart-bar chart-bar-4">
+                                <span class="chart-label">Cyber Dawn</span>
+                                <span class="chart-value">172 plays</span>
+                            </div>
+                            <div class="chart-bar chart-bar-5">
+                                <span class="chart-label">Quantum Leap</span>
+                                <span class="chart-value">115 plays</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="songs-section">
+                    <div class="section-header">
+                        <h2>Songs</h2>
+                        <div class="songs-controls">
+                            <select class="sort-select" aria-label="Sort songs by">
+                                <option value="recent">Recently Added</option>
+                                <option value="title">Title</option>
+                                <option value="artist">Artist</option>
+                                <option value="album">Album</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Selection Toolbar -->
+                    <div class="selection-toolbar" hidden>
+                        <div class="selection-info">
+                            <input type="checkbox" id="select-all" aria-label="Select all songs">
+                            <span><span id="selected-count">0</span> selected</span>
+                        </div>
+                        <div class="selection-actions">
+                            <button type="button" class="selection-action" data-action="play" aria-label="Play selected">
+                                <i class="fas fa-play"></i> Play
+                            </button>
+                            <button type="button" class="selection-action" data-action="add" aria-label="Add to playlist">
+                                <i class="fas fa-plus"></i> Add to
+                            </button>
+                            <button type="button" class="selection-action" data-action="remove" aria-label="Remove selected">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="songs-table">
+                        <div class="songs-header">
+                            <div class="header-cell">#</div>
+                            <div class="header-cell">TITLE</div>
+                            <div class="header-cell">ARTIST</div>
+                            <div class="header-cell">ALBUM</div>
+                            <div class="header-cell">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div id="songs-container"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="now-playing-bar">
+            <div class="now-playing-left">
+                <img src="imgs/album-01.png" alt="Current track">
+                <div class="track-info">
+                    <div class="track-name">Track Name</div>
+                    <div class="artist-name">Artist Name</div>
+                </div>
+                <button type="button" class="like-track" aria-label="Like this track">
+                    <i class="far fa-heart"></i>
+                </button>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button type="button" class="shuffle" aria-label="Shuffle"><i class="fas fa-random"></i></button>
+                    <button type="button" class="previous" aria-label="Previous track"><i class="fas fa-step-backward"></i></button>
+                    <button type="button" class="play-pause" aria-label="Play or pause"><i class="fas fa-play"></i></button>
+                    <button type="button" class="next" aria-label="Next track"><i class="fas fa-step-forward"></i></button>
+                    <button type="button" class="repeat" aria-label="Repeat"><i class="fas fa-redo"></i></button>
+                </div>
+                <div class="progress-bar">
+                    <span class="current-time">0:00</span>
+                    <div class="progress-wrapper">
+                        <div class="progress"></div>
+                    </div>
+                    <span class="total-time">3:45</span>
+                </div>
+            </div>
+
+            <div class="now-playing-right">
+                <button type="button" class="lyrics" aria-label="Show lyrics"><i class="fas fa-microphone"></i></button>
+                <button type="button" class="queue" aria-label="Show queue"><i class="fas fa-list"></i></button>
+                <button type="button" class="volume" aria-label="Adjust volume">
+                    <i class="fas fa-volume-up"></i>
+                    <div class="volume-slider">
+                        <div class="volume-bar"></div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Share Modal -->
+    <div class="modal" id="share-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Share Playlist</h2>
+                <button type="button" class="close-btn" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="share-options">
+                <div class="share-link-container">
+                    <label for="share-link" class="visually-hidden">Playlist share link</label>
+                    <input type="text" id="share-link" value="https://banshee.music/playlist/cosmic-vibes" readonly aria-label="Playlist share link">
+                    <button type="button" class="copy-link-btn" aria-label="Copy link">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div class="share-platforms">
+                    <button type="button" class="share-platform-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                    <button type="button" class="share-platform-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </button>
+                    <button type="button" class="share-platform-btn instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </button>
+                    <button type="button" class="share-platform-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </button>
+                </div>
+
+                <div class="embed-code-container">
+                    <h3>Embed Playlist</h3>
+                    <label for="embed-code" class="visually-hidden">Embed code</label>
+                    <textarea id="embed-code" readonly aria-label="Embed code"><iframe src="https://banshee.music/embed/playlist/cosmic-vibes" width="300" height="380" frameborder="0"></iframe></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="copyright">&copy; 2024 Banshee Music App. All rights reserved.</p>
+                <nav class="footer-nav">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+
+    <script src="player.js"></script>
+    <script src="playlist.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Page - Banshee Music App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="artist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="subscription.html" aria-label="Go to subscription page">
+                    <img src="imgs/logo-B.png" alt="Banshee Music Logo" loading="lazy">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="playlist.html">Playlists</a></li>
+                <li><a href="artist.html" aria-current="page">Artists</a></li>
+            </ul>
+            <div class="user-profile">
+                <button type="button" class="profile-button" aria-expanded="false" aria-controls="dropdown-menu">
+                    <img class="profile-icon" src="imgs/profile-icon-B.png" alt="User Profile" loading="lazy">
+                </button>
+                <div class="dropdown">
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                        <li><a href="#" class="logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" role="main" class="container">
+        <div class="section artist-header">
+            <div class="artist-header-backdrop"></div>
+            <div class="artist-photo-container">
+                <img src="imgs/album-04-B.png" alt="John Doe" class="artist-photo">
+                <div class="artist-photo-overlay"></div>
+            </div>
+            <div class="artist-info">
+                <div class="artist-name">
+                    <h1>John Doe <span class="verified-badge" title="Verified Artist"><i class="fas fa-check-circle"></i></span></h1>
+                    <div class="subtitle">Professional Music Artist</div>
+                </div>
+                <div class="artist-bio-container">
+                    <p class="artist-bio" id="artist-bio">
+                        Artist Biography goes here. This is a short description about the artist,
+                        their journey, and their musical style. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        <br><br>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <br><br>
+                        The artist has released multiple albums and singles, collaborated with various renowned artists, and performed at major music festivals around the world. Their unique sound combines elements of electronic, pop, and indie music, creating a distinctive style that resonates with fans globally.
+                    </p>
+                </div>
+                <div class="artist-stats">
+                    <div class="stat">
+                        <i class="fas fa-headphones-alt stat-icon"></i>
+                        <span class="stat-number">2.5M</span>
+                        <span class="stat-label">Monthly Listeners</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users stat-icon"></i>
+                        <span class="stat-number">500K</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-compact-disc stat-icon"></i>
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Albums</span>
+                    </div>
+                </div>
+                <div class="artist-actions">
+                    <button type="button" class="action-btn play-btn">
+                        <i class="fas fa-play"></i>
+                        Play
+                    </button>
+                    <button type="button" class="action-btn follow-btn">
+                        <i class="fas fa-user-plus"></i>
+                        Follow
+                    </button>
+                    <button type="button" class="action-btn share-btn" aria-label="Share artist">
+                        <i class="fas fa-share-alt"></i>
+                        Share
+                    </button>
+                    <!-- Share Modal -->
+                    <div id="shareModal" class="share-modal" hidden>
+                        <div class="share-modal-content">
+                            <h3>Share Artist</h3>
+                            <div class="share-options">
+                                <button type="button" class="share-option" data-platform="facebook">
+                                    <i class="fab fa-facebook"></i>
+                                    Facebook
+                                </button>
+                                <button type="button" class="share-option" data-platform="twitter">
+                                    <i class="fab fa-twitter"></i>
+                                    Twitter
+                                </button>
+                                <button type="button" class="share-option" data-platform="instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    Instagram
+                                </button>
+                                <button type="button" class="share-option copy-link">
+                                    <i class="fas fa-link"></i>
+                                    Copy Link
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Section commented out to reduce redundancy with Featured Albums and Demo Tracks
+        <div class="section-divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon"><i class="fas fa-music"></i></div>
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="music-content">
+                <div class="section music">
+                    <h2>Music</h2>
+                    <div class="items">
+                        <div class="item album-item">
+                            <div class="album-cover">
+                                <img src="imgs/album-01-B.png" alt="Album 1 Cover" loading="lazy">
+                            </div>
+                            <div class="album-details">
+                                <h3>Album 1</h3>
+                                <p class="album-year">2023 • 12 tracks</p>
+                                <button type="button" class="download-btn">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                        <div class="item album-item">
+                            <div class="album-cover">
+                                <img src="imgs/album-02-B.png" alt="Album 2 Cover" loading="lazy">
+                            </div>
+                            <div class="album-details">
+                                <h3>Album 2</h3>
+                                <p class="album-year">2021 • 10 tracks</p>
+                                <button type="button" class="download-btn">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        -->
+
+        <div class="content-wrapper">
+
+                <div class="section-divider small">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-headphones"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="section demos">
+                    <h2>Demo Tracks</h2>
+                    <div class="track-carousel" data-flickity='{"cellAlign": "left", "contain": true, "pageDots": false, "wrapAround": true, "autoPlay": false, "prevNextButtons": true, "adaptiveHeight": false, "draggable": true, "freeScroll": false, "groupCells": 1, "imagesLoaded": true}'>
+                        <div class="track-item" data-preview="https://assets.mixkit.co/music/preview/mixkit-tech-house-vibes-130.mp3">
+                            <div class="track-cover">
+                                <img src="imgs/album-03-B.png" alt="Track 1 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Midnight Dreams</h3>
+                                <p class="track-info">3:45 • Electronic • 2023</p>
+                                <div class="track-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <span class="progress-time">0:00</span>
+                                </div>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item" data-preview="https://assets.mixkit.co/music/preview/mixkit-dreaming-big-31.mp3">
+                            <div class="track-cover">
+                                <img src="imgs/album-04-B.png" alt="Track 2 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Ocean Waves</h3>
+                                <p class="track-info">4:12 • Ambient • 2023</p>
+                                <div class="track-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <span class="progress-time">0:00</span>
+                                </div>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item" data-preview="https://assets.mixkit.co/music/preview/mixkit-hip-hop-02-614.mp3">
+                            <div class="track-cover">
+                                <img src="imgs/album-01-B.png" alt="Track 3 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Neon Lights</h3>
+                                <p class="track-info">3:28 • Synthwave • 2023</p>
+                                <div class="track-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <span class="progress-time">0:00</span>
+                                </div>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-02-B.png" alt="Track 4 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Urban Jungle</h3>
+                                <p class="track-info">5:02 • Downtempo • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-03-B.png" alt="Track 5 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Cosmic Journey</h3>
+                                <p class="track-info">6:15 • Space Ambient • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-04-B.png" alt="Track 6 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Digital Dreams</h3>
+                                <p class="track-info">4:30 • Electronica • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-01-B.png" alt="Track 7 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Neon City</h3>
+                                <p class="track-info">3:55 • Cyberpunk • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-02-B.png" alt="Track 8 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Midnight Drive</h3>
+                                <p class="track-info">4:45 • Synthwave • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-03-B.png" alt="Track 9 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Stellar Voyage</h3>
+                                <p class="track-info">5:18 • Ambient • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-04-B.png" alt="Track 10 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Quantum Leap</h3>
+                                <p class="track-info">4:22 • Electronic • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-01-B.png" alt="Track 11 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Cyber Dawn</h3>
+                                <p class="track-info">3:56 • Cyberpunk • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-cover">
+                                <img src="imgs/album-02-B.png" alt="Track 12 Cover" loading="lazy">
+                                <div class="track-overlay">
+                                    <button type="button" class="play-track-btn" aria-label="Play track">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="track-details">
+                                <h3>Retro Future</h3>
+                                <p class="track-info">4:10 • Synthwave • 2023</p>
+                                <div class="track-controls">
+                                    <button type="button" class="track-action-btn" aria-label="Like track">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="Share track">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                    <button type="button" class="track-action-btn" aria-label="More options">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Flickity handles carousel controls -->
+                    <div class="carousel-options">
+                        <button type="button" class="carousel-option-btn auto-play-btn" aria-label="Toggle auto-play">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Auto-play</span>
+                        </button>
+                        <button type="button" class="carousel-option-btn view-all-btn" aria-label="View all tracks">
+                            <i class="fas fa-th-large"></i>
+                            <span>View All</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-compact-disc"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="section featured-albums">
+                    <h2>Featured Albums</h2>
+                    <div class="album-carousel" data-flickity='{"cellAlign": "left", "contain": true, "pageDots": true, "wrapAround": true, "autoPlay": 7000, "prevNextButtons": true, "adaptiveHeight": false, "draggable": true, "freeScroll": false, "groupCells": 1, "selectedAttraction": 0.2, "friction": 0.8, "imagesLoaded": true}'>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-01-B.png" alt="Album 1" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Neon Dreams</h3>
+                                        <p><i class="fas fa-calendar-alt"></i> 2023</p>
+                                        <p><i class="fas fa-music"></i> 12 tracks</p>
+                                        <div class="album-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>4.5</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Neon Dreams</h3>
+                                    <div class="album-meta">
+                                        <p class="album-year"><i class="fas fa-calendar-alt"></i> 2023</p>
+                                        <p class="album-tracks-count"><i class="fas fa-music"></i> 12 tracks</p>
+                                        <p class="album-genre"><i class="fas fa-tag"></i> Synthwave</p>
+                                    </div>
+                                    <ul class="album-tracks">
+                                        <li><span class="track-number">1</span> Midnight City <span class="track-duration">3:45</span></li>
+                                        <li><span class="track-number">2</span> Electric Dreams <span class="track-duration">4:12</span></li>
+                                        <li><span class="track-number">3</span> Neon Lights <span class="track-duration">3:28</span></li>
+                                        <li><span class="track-number">4</span> Urban Jungle <span class="track-duration">5:02</span></li>
+                                        <li><span class="track-number">5</span> Digital Love <span class="track-duration">4:30</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-02-B.png" alt="Album 2" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Cosmic Journey</h3>
+                                        <p>2022 • 10 tracks</p>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Cosmic Journey</h3>
+                                    <p class="album-year">2022 • 10 tracks</p>
+                                    <ul class="album-tracks">
+                                        <li>1. Stellar <span>4:15</span></li>
+                                        <li>2. Nebula <span>3:52</span></li>
+                                        <li>3. Cosmic Waves <span>5:10</span></li>
+                                        <li>4. Interstellar <span>4:45</span></li>
+                                        <li>5. Galaxy <span>3:30</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-03-B.png" alt="Album 3" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Digital Dreams</h3>
+                                        <p>2021 • 8 tracks</p>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Digital Dreams</h3>
+                                    <p class="album-year">2021 • 8 tracks</p>
+                                    <ul class="album-tracks">
+                                        <li>1. Binary <span>3:25</span></li>
+                                        <li>2. Code <span>4:05</span></li>
+                                        <li>3. Digital Love <span>3:50</span></li>
+                                        <li>4. Pixel <span>4:20</span></li>
+                                        <li>5. Virtual <span>5:15</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-04-B.png" alt="Album 4" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Ocean Waves</h3>
+                                        <p>2020 • 9 tracks</p>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Ocean Waves</h3>
+                                    <p class="album-year">2020 • 9 tracks</p>
+                                    <ul class="album-tracks">
+                                        <li>1. Tide <span>4:10</span></li>
+                                        <li>2. Surf <span>3:45</span></li>
+                                        <li>3. Deep Blue <span>5:20</span></li>
+                                        <li>4. Coral <span>3:55</span></li>
+                                        <li>5. Horizon <span>4:30</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-01-B.png" alt="Album 5" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Cyber Dreams</h3>
+                                        <p>2019 • 11 tracks</p>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Cyber Dreams</h3>
+                                    <p class="album-year">2019 • 11 tracks</p>
+                                    <ul class="album-tracks">
+                                        <li>1. Neon City <span>3:55</span></li>
+                                        <li>2. Digital Rain <span>4:20</span></li>
+                                        <li>3. Cyber Cafe <span>3:45</span></li>
+                                        <li>4. Virtual Reality <span>5:10</span></li>
+                                        <li>5. Hologram <span>4:30</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-02-B.png" alt="Album 6" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Midnight Vibes</h3>
+                                        <p>2018 • 8 tracks</p>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Midnight Vibes</h3>
+                                    <p class="album-year">2018 • 8 tracks</p>
+                                    <ul class="album-tracks">
+                                        <li>1. After Hours <span>4:15</span></li>
+                                        <li>2. Moonlight <span>3:50</span></li>
+                                        <li>3. Stargazing <span>5:05</span></li>
+                                        <li>4. Night Drive <span>4:25</span></li>
+                                        <li>5. Twilight <span>3:40</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-03-B.png" alt="Album 7" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Electric Soul</h3>
+                                        <p>2017 • 10 tracks</p>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Electric Soul</h3>
+                                    <p class="album-year">2017 • 10 tracks</p>
+                                    <ul class="album-tracks">
+                                        <li>1. Voltage <span>3:30</span></li>
+                                        <li>2. Current <span>4:05</span></li>
+                                        <li>3. Spark <span>3:45</span></li>
+                                        <li>4. Circuit <span>4:20</span></li>
+                                        <li>5. Power <span>3:55</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-card-inner">
+                                <div class="album-card-front">
+                                    <img src="imgs/album-04-B.png" alt="Album 8" loading="lazy">
+                                    <div class="album-card-overlay">
+                                        <h3>Ambient Journeys</h3>
+                                        <p>2016 • 7 tracks</p>
+                                    </div>
+                                </div>
+                                <div class="album-card-back">
+                                    <h3>Ambient Journeys</h3>
+                                    <p class="album-year">2016 • 7 tracks</p>
+                                    <ul class="album-tracks">
+                                        <li>1. Floating <span>6:10</span></li>
+                                        <li>2. Drifting <span>5:45</span></li>
+                                        <li>3. Weightless <span>7:20</span></li>
+                                        <li>4. Ethereal <span>4:55</span></li>
+                                        <li>5. Serenity <span>6:30</span></li>
+                                    </ul>
+                                    <div class="album-actions">
+                                        <button type="button" class="album-action-btn" aria-label="Play album">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Add to library">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button type="button" class="album-action-btn" aria-label="Share album">
+                                            <i class="fas fa-share-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Flickity handles album carousel controls -->
+                </div>
+
+                <!-- Trending Music section commented out to reduce redundancy with Featured Albums and Demo Tracks
+                <div class="section-divider small">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="section trending">
+                    <h2>Trending Music</h2>
+                    <div class="items">
+                        <div class="item">
+                            <img class="music-note" src="imgs/album-01.png" alt="Album 1" loading="lazy">
+                            <h3>Album 1</h3>
+                            <button type="button">Play</button>
+                        </div>
+                        <div class="item">
+                            <img class="music-note" src="imgs/album-02.png" alt="Album 2" loading="lazy">
+                            <h3>Album 2</h3>
+                            <button type="button">Play</button>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+
+            <div class="event-content">
+                <div class="section concerts">
+                    <h2>Concert Dates</h2>
+                    <div class="items">
+                        <div class="item">
+                            <h3>Concert 1</h3>
+                            <p>Date: June 1, 2024</p>
+                            <p>Venue: Madison Square Garden</p>
+                            <button type="button">Book Tickets</button>
+                        </div>
+                        <div class="item">
+                            <h3>Concert 2</h3>
+                            <p>Date: July 15, 2024</p>
+                            <p>Venue: The O2 Arena</p>
+                            <button type="button">Book Tickets</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider small">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-ticket-alt"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <div class="section events">
+                    <h2>Special Events</h2>
+                    <div class="items">
+                        <div class="item">
+                            <h3>Event 1</h3>
+                            <p>Date: June 20, 2024</p>
+                            <p>Location: Los Angeles</p>
+                            <button type="button">Book Event</button>
+                        </div>
+                        <div class="item">
+                            <h3>Event 2</h3>
+                            <p>Date: August 5, 2024</p>
+                            <p>Location: New York City</p>
+                            <button type="button">Book Event</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery section removed to streamline the page -->
+
+        <div class="section-divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon"><i class="fas fa-users"></i></div>
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="section similar-artists">
+            <h2>Similar Artists</h2>
+            <div class="similar-artists-grid">
+                <div class="similar-artist-card">
+                    <div class="similar-artist-photo">
+                        <img src="imgs/album-01-B.png" alt="Similar Artist 1" loading="lazy">
+                    </div>
+                    <h3>Artist Name 1</h3>
+                    <p>1.2M monthly listeners</p>
+                    <button type="button" class="view-artist-btn">View Artist</button>
+                </div>
+                <div class="similar-artist-card">
+                    <div class="similar-artist-photo">
+                        <img src="imgs/album-02-B.png" alt="Similar Artist 2" loading="lazy">
+                    </div>
+                    <h3>Artist Name 2</h3>
+                    <p>890K monthly listeners</p>
+                    <button type="button" class="view-artist-btn">View Artist</button>
+                </div>
+                <div class="similar-artist-card">
+                    <div class="similar-artist-photo">
+                        <img src="imgs/album-03-B.png" alt="Similar Artist 3" loading="lazy">
+                    </div>
+                    <h3>Artist Name 3</h3>
+                    <p>2.5M monthly listeners</p>
+                    <button type="button" class="view-artist-btn">View Artist</button>
+                </div>
+                <div class="similar-artist-card">
+                    <div class="similar-artist-photo">
+                        <img src="imgs/album-04-B.png" alt="Similar Artist 4" loading="lazy">
+                    </div>
+                    <h3>Artist Name 4</h3>
+                    <p>750K monthly listeners</p>
+                    <button type="button" class="view-artist-btn">View Artist</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox removed as Gallery section was removed -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="copyright">&copy; 2024 Banshee Music App. All rights reserved.</p>
+                <nav class="footer-nav">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="artist.js"></script>
+</body>
+</html>
+

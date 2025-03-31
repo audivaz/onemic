@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Banshee Music App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile-new.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imgs/logo-B.png" alt="Banshee Music Logo" width="32" height="32">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="library.html">Library</a></li>
+                <li><a href="player.html">Player</a></li>
+            </ul>
+            <div class="user-profile">
+                <button type="button" class="profile-button active" aria-expanded="false" aria-controls="user-menu">
+                    <img class="profile-icon" src="imgs/profile-icon-B.png" alt="User Profile">
+                </button>
+                <div id="user-menu" class="dropdown" hidden>
+                    <ul>
+                        <li><a href="profile.html" aria-current="page">Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="#" class="logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-hero">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <div class="profile-image-container">
+                        <img src="imgs/profile-icon-B.png" alt="Profile Picture" id="profile-image">
+                        <button type="button" class="edit-image-btn" aria-label="Change profile picture">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h1 class="profile-name">User Name</h1>
+                        <p class="profile-bio">Music enthusiast with a passion for discovering new artists and genres. I love creating curated playlists for every mood and occasion. My musical journey started with classical piano, but I've since explored everything from indie rock to electronic dance music. I'm always looking for recommendations and love sharing my discoveries with others. When I'm not listening to music, I enjoy attending live concerts and music festivals around the world. Feel free to follow my playlists or connect with me to share your favorite tracks!</p>
+                        <div class="profile-stats">
+                            <div class="stat" id="playlists-stat">
+                                <span class="stat-icon"><i class="fas fa-music"></i></span>
+                                <span class="stat-value" id="playlists-count">250</span>
+                                <span class="stat-label">Playlists</span>
+                            </div>
+                            <div class="stat" id="followers-stat">
+                                <span class="stat-icon"><i class="fas fa-users"></i></span>
+                                <span class="stat-value" id="followers-count">12.5K</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                            <div class="stat" id="following-stat">
+                                <span class="stat-icon"><i class="fas fa-user-plus"></i></span>
+                                <span class="stat-value" id="following-count">1.2K</span>
+                                <span class="stat-label">Following</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="edit-profile-btn">Edit Profile</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-content">
+            <div class="content-section">
+                <div class="playlists-container">
+                    <div class="section-header">
+                        <h2>Your Playlists</h2>
+                        <button type="button" class="view-all-btn">View All</button>
+                    </div>
+
+                    <div class="playlists-grid">
+                        <div class="playlist-card">
+                            <div class="img-container">
+                                <img src="imgs/album-01.png" alt="My Favorites" loading="lazy">
+                                <div class="play-overlay">
+                                    <button type="button" class="play-button" aria-label="Play My Favorites">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">My Favorites</h3>
+                                <span class="playlist-tracks">24 tracks</span>
+                            </div>
+                        </div>
+
+                        <div class="playlist-card">
+                            <div class="img-container">
+                                <img src="imgs/album-02.png" alt="Chill Vibes" loading="lazy">
+                                <div class="play-overlay">
+                                    <button type="button" class="play-button" aria-label="Play Chill Vibes">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">Chill Vibes</h3>
+                                <span class="playlist-tracks">18 tracks</span>
+                            </div>
+                        </div>
+
+                        <div class="playlist-card">
+                            <div class="img-container">
+                                <img src="imgs/album-03.png" alt="Workout Mix" loading="lazy">
+                                <div class="play-overlay">
+                                    <button type="button" class="play-button" aria-label="Play Workout Mix">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="playlist-info">
+                                <h3 class="playlist-title">Workout Mix</h3>
+                                <span class="playlist-tracks">32 tracks</span>
+                            </div>
+                        </div>
+
+                        <div class="playlist-card create-playlist-card">
+                            <div class="create-playlist-content">
+                                <div class="create-icon">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <h3>Create Playlist</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Recently Played</h2>
+                    <button type="button" class="view-all-btn" data-section="recent">View All</button>
+                </div>
+                <div class="cards-grid" id="recent-grid">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="imgs/album-01.png" alt="Blinding Lights" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play Blinding Lights">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Blinding Lights</h3>
+                            <p class="card-subtitle">The Weeknd</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="imgs/album-02.png" alt="As It Was" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play As It Was">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">As It Was</h3>
+                            <p class="card-subtitle">Harry Styles</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="imgs/album-03.png" alt="Bad Habit" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play Bad Habit">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Bad Habit</h3>
+                            <p class="card-subtitle">Steve Lacy</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="imgs/album-04.png" alt="Anti-Hero" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play Anti-Hero">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Anti-Hero</h3>
+                            <p class="card-subtitle">Taylor Swift</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <div class="section-header">
+                    <h2>Favorite Artists</h2>
+                    <button type="button" class="view-all-btn" data-section="artists">View All</button>
+                </div>
+                <div class="cards-grid" id="artists-grid">
+                    <div class="card artist-card">
+                        <div class="img-container">
+                            <img src="imgs/profile-icon-B.png" alt="The Weeknd" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play The Weeknd">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">The Weeknd</h3>
+                            <p class="card-subtitle">Artist</p>
+                        </div>
+                    </div>
+                    <div class="card artist-card">
+                        <div class="img-container">
+                            <img src="imgs/profile-icon-B.png" alt="Taylor Swift" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play Taylor Swift">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Taylor Swift</h3>
+                            <p class="card-subtitle">Artist</p>
+                        </div>
+                    </div>
+                    <div class="card artist-card">
+                        <div class="img-container">
+                            <img src="imgs/profile-icon-B.png" alt="Drake" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play Drake">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Drake</h3>
+                            <p class="card-subtitle">Artist</p>
+                        </div>
+                    </div>
+                    <div class="card artist-card">
+                        <div class="img-container">
+                            <img src="imgs/profile-icon-B.png" alt="Billie Eilish" loading="lazy">
+                            <div class="play-overlay">
+                                <button type="button" class="play-button" aria-label="Play Billie Eilish">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Billie Eilish</h3>
+                            <p class="card-subtitle">Artist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="edit-profile-modal">
+    <div class="modal-content">
+        <h2>Edit Profile</h2>
+        <form id="edit-profile-form">
+            <div class="form-group">
+                <label for="edit-name">Display Name</label>
+                <input type="text" id="edit-name" required>
+            </div>
+            <div class="form-group">
+                <label for="edit-bio">Bio</label>
+                <textarea id="edit-bio" rows="3"></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="save-btn">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal" id="connections-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="tab-buttons">
+                <button type="button" class="tab-btn active" data-tab="followers">Followers</button>
+                <button type="button" class="tab-btn" data-tab="following">Following</button>
+            </div>
+            <button type="button" class="close-btn" aria-label="Close">&times;</button>
+        </div>
+        <div class="connections-list" id="followers-list"></div>
+        <div class="connections-list hidden" id="following-list"></div>
+    </div>
+</div>
+<!-- Activity Details Modal -->
+<div class="modal" id="activity-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Activity Details</h3>
+            <button type="button" class="close-btn" aria-label="Close">&times;</button>
+        </div>
+        <div class="activity-details"></div>
+        <div class="modal-actions">
+            <button type="button" class="share-btn">Share</button>
+            <button type="button" class="like-btn">Like</button>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="imgs/logo-B.png" alt="Banshee Music Logo" loading="lazy">
+            </div>
+            <div class="footer-info">
+                <p class="copyright">&copy; 2024 Banshee Music App. All rights reserved.</p>
+                <nav class="footer-nav">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="contact.html">Contact Us</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" type="button">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="profile.js" type="module"></script>
+</body>
+</html>
